@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    <title>Scratch Empires Seasons</title>
+    <link rel="icon" type="image/x-icon" href="/Images/Favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleA.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/" id="otheritem">Home</a>
+        <a href="/admins.html" id="otheritem">Admins</a>
+        <a href="/news.html">Announcements</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/seasons.html">Seasons</a>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <h1>Scratch Empires Seasons</h1>
+            <h2>Empires of Scratch</h2>
+            <p>The original Empires of Scratch Minecraft server started in January 2022. It became popular but prematurely shut down to extended periods of downtime and lack of attention from its owner, _EmeraldThunder_. After a world download was eventually released, a new server was started by SharkBaitBilly and continued where the previous one left off, under the name of Scratch Empires.</p>
+            <h2>Scratch Empires Season 2</h2>
+            <p>The Season 2 server was created by Nezons (Goner5) in December of 2022[confirmation needed], hosted by SwimOctopus. In June of 2023 the server's forum page was taken down by the Scratch Team and Goner5 was banned from Scratch. A new temporary topic was created in the meantime. A notable event that also happened in June was xX_RedTheCoder_Xx created several Legendary Items obtained by defeating bosses and winning server events.</p>
+            <h2>Scratch Empires Season 3</h2>
+            <p>The season 3 server was created by Ablatious (Thmnko) and Nezons on November 21, 2023. It has faced possibly the most conflict out of any other season due to the World Wars and the crimes of the Holy Roman Empire.</p>
+            <h2>Scratch Empires Season 4</h2>
+            <p>The season 4 server was created by TrioSALAD in partnership with SkoodTheDood, NovaNebula, and AutoTheKat on June 5, 2024. 3koo2 became the server host shortly after the start, with a few different admins being chosen. This is the current iteration of Scratch Empires.</p>
+            <img src="images/image10.png" alt="Cool Image" onclick="openFullscreen(this)">
+        </div>
+    </div>
+    <div id="fullscreenModal" class="fullscreen-modal">
+        <span class="close" onclick="closeFullscreen()">&times;</span>
+        <span class="zoom-in" onclick="zoomIn()">+</span>
+        <span class="zoom-out" onclick="zoomOut()">-</span>
+        <img id="fullscreenImage" src="" alt="Fullscreen Image">
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        function openFullscreen(img) {
+            var fullscreenModal = document.getElementById("fullscreenModal");
+            var fullscreenImage = document.getElementById("fullscreenImage");
+            fullscreenImage.src = img.src;
+            fullscreenModal.style.display = "flex";
+            fullscreenImage.style.transform = "scale(1)";
+        }
+
+        function closeFullscreen() {
+            document.getElementById("fullscreenModal").style.display = "none";
+        }
+
+        function zoomIn() {
+            var img = document.getElementById("fullscreenImage");
+            var currScale = getCurrentScale(img);
+            img.style.transform = "scale(" + (currScale + 0.1) + ")";
+        }
+
+        function zoomOut() {
+            var img = document.getElementById("fullscreenImage");
+            var currScale = getCurrentScale(img);
+            img.style.transform = "scale(" + (currScale - 0.1) + ")";
+        }
+
+        function getCurrentScale(element) {
+            var style = window.getComputedStyle(element);
+            var matrix = new WebKitCSSMatrix(style.transform);
+            return matrix.a; // Returns the current scale
+        }
+    </script>
+</body>
+</html>
