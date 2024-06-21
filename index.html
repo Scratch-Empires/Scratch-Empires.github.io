@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    <title>Scratch Empires Website</title>
+    <link rel="icon" type="image/x-icon" href="/Images/Favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styleA.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/" id="otheritem">Home</a>
+        <a href="/admins.html" id="otheritem">Admins</a>
+        <a href="/scratch.html" id="otheritem">On Scratch</a>
+        <a href="/eos.html" id="SE0">EOS</a>
+        <a href="/se1.html" id="SE123">SE1</a>
+        <a href="/se2.html" id="SE123">SE2</a>
+        <a href="/se3.html" id="SE123">SE3</a>
+        <a href="/se4.html" id="SE4">SE4</a>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <h1>Welcome to Scratch Empires</h1>
+            <img src="/images/SE4LOGO.png" alt="Scratch Empires Season 4 Logo" onclick="openFullscreen(this)">
+            <div class="caption">Scratch Empires 4, the current iteration of Scratch Empires.</div>
+            <p>Welcome to Scratch Empires, the ultimate Minecraft server where creativity meets strategy! Here, you can create your own nation and conquer the world. Join us in Season 4, where new challenges, features, and adventures await you as you build and expand your empire. Whether you’re forming alliances or waging wars, the power to shape your destiny is in your hands. Are you ready to rise to the top?</p>
+        </div>
+        <div class="gallery">
+            <img src="images/image1.png" alt="Gallery Image 1" onclick="openFullscreen(this)">
+            <img src="images/image2.png" alt="Gallery Image 2" onclick="openFullscreen(this)">
+            <img src="images/image3.png" alt="Gallery Image 3" onclick="openFullscreen(this)">
+        </div>
+        <button class="view-all-button" onclick="openModal()">View All</button>
+
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <img src="images/image1.png" alt="Gallery Image 1" onclick="openFullscreen(this)">
+                <img src="images/image2.png" alt="Gallery Image 2" onclick="openFullscreen(this)">
+                <img src="images/image3.png" alt="Gallery Image 3" onclick="openFullscreen(this)">
+                <img src="images/image4.png" alt="Gallery Image 4" onclick="openFullscreen(this)">
+                <img src="images/image5.png" alt="Gallery Image 5" onclick="openFullscreen(this)">
+                <img src="images/image6.png" alt="Gallery Image 6" onclick="openFullscreen(this)">
+                <img src="images/image7.png" alt="Gallery Image 7" onclick="openFullscreen(this)">
+                <img src="images/image8.png" alt="Gallery Image 8" onclick="openFullscreen(this)">
+                <img src="images/image9.png" alt="Gallery Image 9" onclick="openFullscreen(this)">
+                <img src="images/image10.png" alt="Gallery Image 10" onclick="openFullscreen(this)">
+            </div>
+        </div>
+
+        <div id="fullscreenModal" class="fullscreen-modal">
+            <span class="close" onclick="closeFullscreen()">&times;</span>
+            <span class="zoom-in" onclick="zoomIn()">+</span>
+            <span class="zoom-out" onclick="zoomOut()">-</span>
+            <img id="fullscreenImage" src="" alt="Fullscreen Image">
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Scratch Empires. All rights reserved.</p>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        function openFullscreen(img) {
+            var fullscreenModal = document.getElementById("fullscreenModal");
+            var fullscreenImage = document.getElementById("fullscreenImage");
+            fullscreenImage.src = img.src;
+            fullscreenModal.style.display = "flex";
+            fullscreenImage.style.transform = "scale(1)";
+        }
+
+        function closeFullscreen() {
+            document.getElementById("fullscreenModal").style.display = "none";
+        }
+
+        function zoomIn() {
+            var img = document.getElementById("fullscreenImage");
+            var currScale = getCurrentScale(img);
+            img.style.transform = "scale(" + (currScale + 0.1) + ")";
+        }
+
+        function zoomOut() {
+            var img = document.getElementById("fullscreenImage");
+            var currScale = getCurrentScale(img);
+            img.style.transform = "scale(" + (currScale - 0.1) + ")";
+        }
+
+        function getCurrentScale(element) {
+            var style = window.getComputedStyle(element);
+            var matrix = new WebKitCSSMatrix(style.transform);
+            return matrix.a; // Returns the current scale
+        }
+    </script>
+</body>
+</html>
