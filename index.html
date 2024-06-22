@@ -112,7 +112,15 @@
         <script>
             let isDragging = false;
             let startX, startY, initialLeft, initialTop;
-    
+
+            function openModal() {
+                document.getElementById("myModal").style.display = "flex";
+            }
+
+            function closeModal() {
+                document.getElementById("myModal").style.display = "none";
+            }
+
             function openFullscreen(img) {
                 const fullscreenModal = document.getElementById("fullscreenModal");
                 const fullscreenImage = document.getElementById("fullscreenImage");
