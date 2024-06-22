@@ -5,7 +5,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
     <title>Scratch Empires Contact</title>
-    <link rel="icon" type="image/x-icon" href="/images/Favicon.png">
+    <link rel="icon" type="image/x-icon" href="/Images/Favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleA.css">
@@ -15,6 +15,7 @@
         <a href="/" id="otheritem">Home</a>
         <a href="/admins.html" id="otheritem">Admins</a>
         <a href="/news.html">Announcements</a>
+        <a href="/contact.html">Contact</a>
         <a href="/seasons.html">Seasons</a>
     </div>
 
@@ -23,10 +24,33 @@
             <h1>Contact Us</h1>
             <p>If you have any questions, suggestions, or need support, feel free to reach out to us through the following channels:</p>
             <div class="button-container">
-                <a href="https://scratch.mit.edu/discuss/topic/765357/" class="contact-button">Scratch Forum Topic</a>
-                <a href="https://scratchempires.fandom.com/wiki/Scratch_Empires_Wiki" class="contact-button">Wiki</a>
+                <a href="https://scratch.mit.edu/discuss/topic/765357/" class="view-all-button">Scratch Forum Topic</a>
+                <a href="https://scratchempires.fandom.com/wiki/Scratch_Empires_Wiki" class="view-all-button">Wiki</a>
             </div>
         </div>
     </div>
+
+    <style>
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .contact-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </body>
 </html>
