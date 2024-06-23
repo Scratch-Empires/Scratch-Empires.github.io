@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,12 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleA.css">
 </head>
+
 <body>
     <div class="navbar">
-        <a href="/" id="otheritem">Home</a>
-        <a href="/admins.html" id="otheritem">Admins</a>
-        <a href="/news.html">Announcements</a>
-        <a href="/contact.html">Contact</a>
+        <a href="./" id="otheritem">Home</a>
+        <a href="./admins.html" id="otheritem">Admins</a>
+        <a href="./news.html">Announcements</a>
+        <a href="./contact.html">Contact</a>
     </div>
 
     <div class="container">
@@ -32,59 +34,61 @@
             <img src="images/image10.png" alt="Cool Image" onclick="openFullscreen(this)">
         </div>
     </div>
-        <style>
-            .fullscreen-modal {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.8);
-                justify-content: center;
-                align-items: center;
-                overflow: hidden;
-                z-index: 1000;
-            }
-    
-            .fullscreen-modal img {
-                position: relative;
-                max-width: none;
-                max-height: none;
-                transition: transform 0.2s;
-                cursor: grab;
-            }
-    
-            .fullscreen-modal img:active {
-                cursor: grabbing;
-            }
-    
-            .fullscreen-modal .close,
-            .fullscreen-modal .zoom-in,
-            .fullscreen-modal .zoom-out {
-                position: absolute;
-                top: 20px;
-                color: white;
-                font-size: 30px;
-                font-weight: bold;
-                padding: 10px;
-                cursor: pointer;
-                z-index: 1001;
-            }
-    
-            .fullscreen-modal .close {
-                right: 20px;
-            }
-    
-            .fullscreen-modal .zoom-in {
-                right: 60px;
-            }
-    
-            .fullscreen-modal .zoom-out {
-                right: 100px;
-            }
-        </style>
+    <style>
+        .fullscreen-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .fullscreen-modal img {
+            position: relative;
+            max-width: none;
+            max-height: none;
+            transition: transform 0.2s;
+            cursor: grab;
+        }
+
+        .fullscreen-modal img:active {
+            cursor: grabbing;
+        }
+
+        .fullscreen-modal .close,
+        .fullscreen-modal .zoom-in,
+        .fullscreen-modal .zoom-out {
+            position: absolute;
+            top: 20px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .fullscreen-modal .close {
+            right: 20px;
+        }
+
+        .fullscreen-modal .zoom-in {
+            right: 60px;
+        }
+
+        .fullscreen-modal .zoom-out {
+            right: 100px;
+        }
+
+    </style>
     </head>
+
     <body>
         <div id="fullscreenModal" class="fullscreen-modal">
             <span class="close" onclick="closeFullscreen()">&times;</span>
@@ -92,11 +96,11 @@
             <span class="zoom-out" onclick="zoomOut()">-</span>
             <img id="fullscreenImage" src="" alt="Fullscreen Image">
         </div>
-    
+
         <script>
             let isDragging = false;
             let startX, startY, initialLeft, initialTop;
-    
+
             function openFullscreen(img) {
                 const fullscreenModal = document.getElementById("fullscreenModal");
                 const fullscreenImage = document.getElementById("fullscreenImage");
@@ -106,29 +110,29 @@
                 fullscreenImage.style.left = '0px';
                 fullscreenImage.style.top = '0px';
             }
-    
+
             function closeFullscreen() {
                 document.getElementById("fullscreenModal").style.display = "none";
             }
-    
+
             function zoomIn() {
                 const img = document.getElementById("fullscreenImage");
                 const currScale = getCurrentScale(img);
                 img.style.transform = "scale(" + (currScale + 0.1) + ")";
             }
-    
+
             function zoomOut() {
                 const img = document.getElementById("fullscreenImage");
                 const currScale = getCurrentScale(img);
                 img.style.transform = "scale(" + Math.max(currScale - 0.1, 1) + ")";
             }
-    
+
             function getCurrentScale(element) {
                 const style = window.getComputedStyle(element);
                 const matrix = new WebKitCSSMatrix(style.transform);
                 return matrix.a; // Returns the current scale
             }
-    
+
             function startDrag(event) {
                 isDragging = true;
                 startX = event.clientX;
@@ -138,13 +142,13 @@
                 initialTop = parseInt(window.getComputedStyle(fullscreenImage).top, 10) || 0;
                 fullscreenImage.style.cursor = 'grabbing';
             }
-    
+
             function stopDrag() {
                 isDragging = false;
                 const fullscreenImage = document.getElementById("fullscreenImage");
                 fullscreenImage.style.cursor = 'grab';
             }
-    
+
             function drag(event) {
                 if (isDragging) {
                     const dx = event.clientX - startX;
@@ -154,10 +158,12 @@
                     fullscreenImage.style.top = initialTop + dy + 'px';
                 }
             }
-    
+
             document.getElementById('fullscreenImage').addEventListener('mousedown', startDrag);
             document.addEventListener('mouseup', stopDrag);
             document.addEventListener('mousemove', drag);
+
         </script>
-</body>
+    </body>
+
 </html>
