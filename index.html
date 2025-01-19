@@ -125,6 +125,9 @@
                 function openFullscreen(img) {
                     const fullscreenModal = document.getElementById("fullscreenModal");
                     const fullscreenImage = document.getElementById("fullscreenImage");
+                    fullscreenImage.draggable = false;
+                    fullscreenImage.height = '714px';
+                    fullscreenImage.width = '1297px';
                     fullscreenImage.src = img.src;
                     fullscreenModal.style.display = "flex";
                     fullscreenImage.style.transform = "scale(1)";
