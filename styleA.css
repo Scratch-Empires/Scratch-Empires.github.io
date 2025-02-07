@@ -1,11 +1,16 @@
 body {
-    font-family: "roboto flex";
+    font-family: "Roboto Flex";
     margin: 0;
     padding: 0;
     background: url('images/background.png') no-repeat center center fixed;
     background-size: cover;
     color: #e0e0e0;
     text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
@@ -39,7 +44,7 @@ body {
 }
 
 .container {
-    padding: 100px 20px 20px;
+    margin-top: 20px;
 }
 
 .footer {
@@ -59,9 +64,12 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     margin-top: 20px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     text-align: left;
     max-width: 800px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -100,9 +108,9 @@ body {
 
 .main-content h1 {
     text-align: center;
-    color: #BB86FC;
     font-size: 36px;
     text-decoration: none;
+    animation: colorCycle 24s infinite;
 }
 
 #H1link {
@@ -125,7 +133,18 @@ body {
     text-align: center;
     font-size: 16px;
     color: #03DAC5;
-    margin-top: 10px;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.color-cycle {
+    text-decoration: none;
+    animation: colorCycle 24s infinite !important;
 }
 
 .gallery {
@@ -286,4 +305,28 @@ body {
 
 #imgontable:hover {
     size: 150%;
+}
+
+@keyframes colorCycle {
+    0% {
+        color: #5efd64;
+    }
+    16% {
+        color: #034e9b;
+    }
+    32% {
+        color: #fee38d;
+    }
+    48% {
+        color: #4959fd;
+    }
+    64% {
+        color: #f7a3a3;
+    }
+    80% {
+        color: #7552b6;
+    }
+    100% {
+        color: #5efd64;
+    }
 }
