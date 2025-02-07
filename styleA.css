@@ -13,18 +13,21 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
 }
 
+hr {
+    border: 0;
+    height: 2px;
+    background-color: white;
+    margin: 0px 0;
+}
+
 .navbar {
     background-color: rgba(34, 34, 34, 0.8);
     overflow: hidden;
-    border-radius: 0 0 15px 15px;
-    position: fixed;
-    width: 100%;
-    top: 0;
+    border-radius: 10px;
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .navbar a {
@@ -34,12 +37,12 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 14px 20px;
     text-decoration: none;
     font-size: 17px;
-    transition: color 0.3s, font-weight 0.3s;
+    transition: all 0.3s ease;
 }
 
 .navbar a:hover {
-    background-color: #6A1B9A;
-    color: #fff;
+    background-color: #034e9b;
+    color: #bbb;
     font-weight: 900;
 }
 
@@ -59,7 +62,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .main-content {
-    background: rgba(30, 30, 30, 0.8);
+    background-color: rgba(44, 44, 44, 0.486);
+    backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -132,7 +136,11 @@ h1, h2, h3, h4, h5, h6, p {
 .main-content .caption {
     text-align: center;
     font-size: 16px;
-    color: #03DAC5;
+    color: #fff;
+    background-color: rgba(34, 34, 34, 0.8);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
 }
 
 .banner {
@@ -140,6 +148,18 @@ h1, h2, h3, h4, h5, h6, p {
     flex-direction: column;
     align-items: center;
     gap: 8px;
+}
+
+.about {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.about img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
 }
 
 .color-cycle {
@@ -328,5 +348,29 @@ h1, h2, h3, h4, h5, h6, p {
     }
     100% {
         color: #5efd64;
+    }
+}
+
+@keyframes bgColorCycle {
+    0% {
+        background-color: #5efd64;
+    }
+    16% {
+        background-color: #034e9b;
+    }
+    32% {
+        background-color: #fee38d;
+    }
+    48% {
+        background-color: #4959fd;
+    }
+    64% {
+        background-color: #f7a3a3;
+    }
+    80% {
+        background-color: #7552b6;
+    }
+    100% {
+        background-color: #5efd64;
     }
 }
